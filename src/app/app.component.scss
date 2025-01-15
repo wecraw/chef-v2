@@ -1,0 +1,266 @@
+/* 
+ * Color palette variables 
+ * (feel free to import them from a separate _variables.scss if you like)
+ */
+$color1: #ff8200;
+$color2: #58a8fb;
+$color3: #1d1b28;
+$color4: #3253ef;
+$color5: #efad4e;
+
+/* Global styles */
+:root {
+  scroll-behavior: smooth;
+}
+
+p {
+  font-family: "Archivo Black", serif;
+}
+
+/* Fixed header styles */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  //   background-color: #1d1b28;
+  background-color: transparent;
+  z-index: 999;
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+  .band-logo {
+    width: 100px; /* Adjust as needed */
+    height: auto;
+    float: left;
+  }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+  }
+  nav a {
+    text-decoration: none;
+    color: #fff;
+    font-family: "Archivo Black", serif;
+    transition: color 0.3s;
+    &:hover {
+      color: $color1;
+    }
+  }
+}
+
+/* 
+  * Each section's "header" has a parallax background 
+  * They are shown in pairs: the parallax background 
+  * followed by a color block containing content.
+  */
+
+.section-header {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 8em;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: "Archivo Black", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+  }
+}
+
+.music-header {
+  background-image: url("/assets/images/music-bg.jpg");
+}
+.live-header {
+  background-image: url("/assets/images/live-bg.jpg");
+}
+.merch-header {
+  background-image: url("/assets/images/merch-bg.jpg");
+}
+.about-header {
+  background-image: url("/assets/images/about-bg.jpg");
+}
+.contact-header {
+  background-image: url("/assets/images/contact-bg.jpg");
+}
+
+/* Color block for section content */
+.color-block {
+  padding: 2rem;
+}
+
+/* Assign each color block to a color from the palette */
+.color1 {
+  background-color: $color1;
+}
+.color2 {
+  background-color: $color2;
+}
+.color3 {
+  background-color: $color3;
+}
+.color4 {
+  background-color: $color4;
+}
+.color5 {
+  background-color: $color5;
+}
+
+/* MUSIC SECTION */
+.album-grid {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  .album {
+    text-align: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+/* LIVE SECTION */
+.shows-table {
+  font-family: "Archivo Black", serif;
+  width: 75%;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  th,
+  td {
+    padding: 0.75rem;
+    text-align: left;
+  }
+  tbody tr {
+    border-bottom: 1px solid #fff; /* Row borders only */
+    &:first-child {
+      border-top: 1px solid #fff;
+    }
+  }
+  button {
+    float: right;
+    font-family: "Archivo Black", serif;
+    cursor: pointer;
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $color1;
+      border-color: $color1;
+    }
+  }
+}
+
+/* MERCH SECTION */
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  text-align: center;
+
+  .merch-item {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+/* ABOUT SECTION */
+.about-text {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.5;
+  color: #fff;
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* CONTACT SECTION */
+.contact-info {
+  max-width: 500px;
+  margin: 0 auto;
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 768px) {
+  .section-header {
+    h1 {
+      font-size: 5em;
+    }
+  }
+
+  header .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    nav ul {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+.paren {
+  color: white;
+  font-family: "Archivo Black", serif;
+  margin-top: 2px;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 1.3rem;
+}
+.ticker {
+  max-width: 300px;
+  overflow: hidden;
+  line-height: 34px;
+  color: white;
+  font-family: "Archivo Black", serif;
+}
+.d-flex {
+  display: flex;
+}
+
+.marquee-wrapper {
+  margin-top: 9px;
+  margin-left: 10px;
+  display: flex;
+}
