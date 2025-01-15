@@ -136,6 +136,10 @@ header {
 
   .album {
     text-align: center;
+    cursor: pointer;
+    &:hover {
+      z-index: 999999;
+    }
 
     img {
       width: 100%;

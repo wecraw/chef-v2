@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { MarqueeComponent } from './marquee/marquee.component';
 import { CommonModule } from '@angular/common';
+import { NgTiltModule } from '@geometricpanda/angular-tilt';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MarqueeComponent, CommonModule],
+  imports: [RouterOutlet, MarqueeComponent, CommonModule, NgTiltModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
