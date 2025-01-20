@@ -21,15 +21,45 @@
     <!-- Menu -->
     <nav>
       <ul>
-        <li><a href="#music">Music</a></li>
-        <li><a href="#live">Live</a></li>
-        <li><a href="#merch">Merch</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a (click)="scrollToSection('music')">Music</a></li>
+        <li><a (click)="scrollToSection('live')">Live</a></li>
+        <li><a (click)="scrollToSection('merch')">Merch</a></li>
+        <li><a (click)="scrollToSection('about')">About</a></li>
+        <li>
+          <a href="#contact" (click)="scrollToSection('contact')">Contact</a>
+        </li>
       </ul>
     </nav>
   </div>
 </header>
+
+<!-- SOCIAL MEDIA ICONS -->
+<div class="social-icons">
+  <a href="https://www.instagram.com/placeholder" target="_blank">
+    <img
+      src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+      alt="Instagram"
+    />
+  </a>
+  <a href="https://www.youtube.com/placeholder" target="_blank">
+    <img
+      src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg"
+      alt="YouTube"
+    />
+  </a>
+  <a href="https://www.tiktok.com/placeholder" target="_blank">
+    <img
+      src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tiktok.svg"
+      alt="TikTok"
+    />
+  </a>
+  <a href="mailto:placeholder@example.com">
+    <img
+      src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gmail.svg"
+      alt="Email"
+    />
+  </a>
+</div>
 
 <!-- MUSIC SECTION -->
 <section id="music">

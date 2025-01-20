@@ -55,6 +55,30 @@ header {
   }
 }
 
+/* SOCIAL MEDIA ICONS */
+.social-icons {
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000; /* Ensure it's above other content */
+
+  a {
+    display: block; /* Make the links occupy the full width of the container */
+    line-height: 0;
+    &:hover {
+      filter: brightness(70%);
+    }
+    img {
+      width: 30px; /* Adjust icon size as needed */
+      height: 30px;
+      filter: invert(100%); /* Make icons white */
+    }
+  }
+}
+
 /* 
   * Each section's "header" has a parallax background 
   * They are shown in pairs: the parallax background 
@@ -133,18 +157,25 @@ header {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-
-  .album {
-    text-align: center;
-    cursor: pointer;
+  a {
+    height: fit-content;
     &:hover {
       z-index: 999999;
     }
+  }
+
+  .album {
+    max-height: 392px;
+    text-align: center;
+    cursor: pointer;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 
     img {
       width: 100%;
       height: auto;
-      margin-bottom: 0.5rem;
+      // z-index: 999999;
     }
   }
 }
