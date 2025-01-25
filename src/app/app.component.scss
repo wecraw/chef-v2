@@ -212,7 +212,7 @@ header {
 /* LIVE SECTION */
 .shows-table {
   font-family: "Archivo Black", serif;
-  width: 50%;
+  width: 100%;
   border-collapse: collapse;
   margin-left: auto;
   margin-right: auto;
@@ -297,9 +297,13 @@ header {
 
 /* RESPONSIVE MEDIA QUERIES */
 @media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
   .section-header {
     h1 {
       font-size: 5em;
+      width: 100%;
     }
   }
 
