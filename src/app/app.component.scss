@@ -196,7 +196,6 @@ header {
   }
 
   .album {
-    max-height: 392px;
     text-align: center;
     cursor: pointer;
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
@@ -205,8 +204,7 @@ header {
 
     img {
       width: 100%;
-      height: auto;
-      // z-index: 999999;
+      display: block;
     }
   }
 }
