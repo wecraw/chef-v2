@@ -168,6 +168,70 @@ header {
   background-color: $color5;
 }
 
+/* FEATURED SECTION */
+.album-featured {
+  margin-top: 35px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+  p {
+    font-size: 3em;
+  }
+
+  a {
+    height: fit-content;
+    &:hover {
+      z-index: 999999;
+    }
+  }
+
+  .ticket-button {
+    font-family: "Archivo Black", serif;
+    cursor: pointer;
+    background-color: #4ea0e7;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s;
+    box-shadow: 4px 4px 0px #fff; /* Skeuomorphic shadow */
+    &:hover {
+      background-color: $color1;
+      box-shadow: 4px 4px 0px $color1;
+    }
+  }
+  .album {
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 8px 8px 0px #000;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.streaming-logos {
+  display: flex;
+  justify-content: space-around;
+  max-width: 500px;
+  margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  .streaming-logo {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+
+    color: #4ea0e7;
+    border: none;
+    padding: 0.45rem 0.45rem;
+    transition: background-color 0.3s;
+  }
+}
+
 /* MUSIC SECTION */
 .album-grid {
   max-width: 800px;
