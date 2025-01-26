@@ -372,13 +372,14 @@ header {
     height: fit-content;
     cursor: pointer;
     img {
-      width: 100%;
-      max-width: 300px;
+      max-width: 100%;
       height: auto;
+      display: block;
       border-bottom: 2px solid black;
       margin-bottom: 0.5rem;
       margin-left: auto;
       margin-right: auto;
+      object-fit: contain; /* Fallback if aspect ratio is still distorted */
     }
 
     p {
