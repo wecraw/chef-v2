@@ -49,26 +49,26 @@
 </header>
 
 <!-- SOCIAL MEDIA ICONS -->
-<div class="social-icons">
-  <a href="https://www.instagram.com/placeholder" target="_blank">
+<div class="social-icons" #socialIcons [class.fade-out]="isSocialIconsFaded">
+  <a href="https://instagram.com/bandcalledchef" target="_blank">
     <img
       src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
       alt="Instagram"
     />
   </a>
-  <a href="https://www.youtube.com/placeholder" target="_blank">
+  <a href="https://www.youtube.com/@CHEFtube" target="_blank">
     <img
       src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg"
       alt="YouTube"
     />
   </a>
-  <a href="https://www.tiktok.com/placeholder" target="_blank">
+  <a href="https://tiktok.com/@bandcalledchef" target="_blank">
     <img
       src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tiktok.svg"
       alt="TikTok"
     />
   </a>
-  <a href="mailto:placeholder@example.com">
+  <a href="mailto:CHEFbandbooking@gmail.com">
     <img
       src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/gmail.svg"
       alt="Email"
@@ -101,6 +101,7 @@
     <div class="album-featured">
       <a
         href="https://open.spotify.com/track/1PA6WpPOjmEtFqVIl3whqE?si=a7232f1d6c354efb"
+        target="_blank"
       >
         <div
           class="album"
@@ -123,7 +124,7 @@
         <img class="streaming-logo" src="../assets/spotify.svg" alt="Spotify" />
       </a>
       <a
-        href="https://music.apple.com/us/album/fast-johnson-single/1728336436"
+        href="https://music.apple.com/us/album/fast-johnson-single/1757014199"
         target="_blank"
       >
         <img
@@ -132,26 +133,20 @@
           alt="Apple Music"
         />
       </a>
-      <a href="https://www.youtube.com/watch?v=gZvl75mL_fI" target="_blank">
-        <img
-          class="streaming-logo"
-          src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg"
-          alt="YouTube"
-        />
-      </a>
     </div>
   </div>
 </section>
 
 <!-- MUSIC SECTION -->
 <section>
-  <div id="music-header" class="section-header music-header">
+  <div id="music-header" class="section-header albums-header">
     <h1>MUSIC</h1>
   </div>
-  <div class="section-content color-block color1" id="music">
+  <div class="section-content color-block color2" id="music">
     <div class="album-grid">
       <a
         href="https://open.spotify.com/track/2yXUcLQFQM8PGVOW2B9sMo?si=4db3e84332f24e19"
+        target="_blank"
       >
         <div
           class="album"
@@ -166,6 +161,7 @@
       </a>
       <a
         href="https://open.spotify.com/track/3nokHVueV9TLQrVEwzKsu3?si=4a70dd302e27407a"
+        target="_blank"
       >
         <div
           class="album"
@@ -180,6 +176,7 @@
       </a>
       <a
         href="https://open.spotify.com/track/3msEvJljAOEYFE9oiLu98Z?si=ba6a1e152fa64759"
+        target="_blank"
       >
         <div
           class="album"
@@ -194,6 +191,7 @@
       </a>
       <a
         href="https://open.spotify.com/track/1PA6WpPOjmEtFqVIl3whqE?si=a7232f1d6c354efb"
+        target="_blank"
       >
         <div
           class="album"
@@ -215,7 +213,7 @@
   <div class="section-header live-header">
     <h1>Live</h1>
   </div>
-  <div class="section-content color-block color2">
+  <div class="section-content color-block color3">
     <div class="shows-flex-container">
       <div class="show-item">
         <div class="show-info">
@@ -249,7 +247,7 @@
   <div class="section-header merch-header">
     <h1>Merch</h1>
   </div>
-  <div class="section-content color-block color3">
+  <div class="section-content color-block color4">
     <div class="merch-grid">
       <!-- Replace these placeholders with merch images -->
       <div class="merch-item">
@@ -308,15 +306,55 @@
     <div class="contact-info">
       <p>
         <!-- Replace placeholders with real contact links -->
-        Email:
+        Booking:
         <a href="mailto:CHEFbandbooking@gmail.com"
-          >CHEFbandbookingATgmail.com</a
+          >CHEFbandbooking&#64;gmail.com</a
         >
       </p>
-      <p>
-        Instagram:
-        <a href="#">instagram.com/bandcalledchef</a>
-      </p>
+      <div class="streaming-logos">
+        <a
+          href="https://open.spotify.com/artist/16FlDvM71NrgKA1Rdx1Afq?si=xB_eCvb7QJ-NRGIP4IPgpQ"
+          target="_blank"
+        >
+          <img
+            class="streaming-logo"
+            src="../assets/spotify.svg"
+            alt="Spotify"
+          />
+        </a>
+        <a
+          href="https://music.apple.com/us/artist/c-h-e-f/1694433155"
+          target="_blank"
+        >
+          <img
+            class="streaming-logo"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/applemusic.svg"
+            alt="Apple Music"
+          />
+        </a>
+
+        <a href="https://www.youtube.com/@CHEFtube" target="_blank">
+          <img
+            class="streaming-logo"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg"
+            alt="YouTube"
+          />
+        </a>
+        <a href="https://instagram.com/bandcalledchef" target="_blank">
+          <img
+            class="streaming-logo"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
+            alt="Instagram"
+          />
+        </a>
+        <a href="https://tiktok.com/@bandcalledchef" target="_blank">
+          <img
+            class="streaming-logo"
+            src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tiktok.svg"
+            alt="TikTok"
+          />
+        </a>
+      </div>
     </div>
   </div>
 </section>

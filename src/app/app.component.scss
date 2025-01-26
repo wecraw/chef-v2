@@ -86,12 +86,17 @@ header {
   }
 }
 
+@media (min-width: 500px) {
+  .section-header {
+    background-attachment: fixed;
+  }
+}
+
 .section-header {
   position: relative;
   height: 60vh;
   max-height: 500px;
   width: 100%;
-  background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -101,7 +106,7 @@ header {
   justify-content: center;
 
   h1 {
-    font-size: 8em;
+    font-size: 7em;
     margin: 0;
     text-transform: uppercase;
     text-align: center;
@@ -114,6 +119,27 @@ header {
 /* Apply dimming filter to music-header background */
 .music-header {
   background-image: url("/assets/images/music-bg.jpg");
+  position: relative; /* Needed for pseudo-element positioning */
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  /* Ensure content is above the overlay */
+  > * {
+    position: relative;
+    z-index: 2;
+  }
+}
+.albums-header {
+  background-image: url("/assets/images/about-bg.jpg");
   position: relative; /* Needed for pseudo-element positioning */
 
   &::before {
@@ -154,18 +180,27 @@ header {
 /* Assign each color block to a color from the palette */
 .color1 {
   background-color: $color1;
+  background: #ff8200
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='9' cy='3' r='1'/%3E%3Ccircle cx='15' cy='3' r='1'/%3E%3Ccircle cx='21' cy='3' r='1'/%3E%3Ccircle cx='27' cy='3' r='1'/%3E%3Ccircle cx='33' cy='3' r='1'/%3E%3Ccircle cx='39' cy='3' r='1'/%3E%3Ccircle cx='45' cy='3' r='1'/%3E%3Ccircle cx='51' cy='3' r='1'/%3E%3Ccircle cx='57' cy='3' r='1'/%3E%3Ccircle cx='3' cy='9' r='1'/%3E%3Ccircle cx='9' cy='9' r='1'/%3E%3Ccircle cx='15' cy='9' r='1'/%3E%3Ccircle cx='21' cy='9' r='1'/%3E%3Ccircle cx='27' cy='9' r='1'/%3E%3Ccircle cx='33' cy='9' r='1'/%3E%3Ccircle cx='39' cy='9' r='1'/%3E%3Ccircle cx='45' cy='9' r='1'/%3E%3Ccircle cx='51' cy='9' r='1'/%3E%3Ccircle cx='57' cy='9' r='1'/%3E%3Ccircle cx='3' cy='15' r='1'/%3E%3Ccircle cx='9' cy='15' r='1'/%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3Ccircle cx='21' cy='15' r='1'/%3E%3Ccircle cx='27' cy='15' r='1'/%3E%3Ccircle cx='33' cy='15' r='1'/%3E%3Ccircle cx='39' cy='15' r='1'/%3E%3Ccircle cx='45' cy='15' r='1'/%3E%3Ccircle cx='51' cy='15' r='1'/%3E%3Ccircle cx='57' cy='15' r='1'/%3E%3Ccircle cx='3' cy='21' r='1'/%3E%3Ccircle cx='9' cy='21' r='1'/%3E%3Ccircle cx='15' cy='21' r='1'/%3E%3Ccircle cx='21' cy='21' r='1'/%3E%3Ccircle cx='27' cy='21' r='1'/%3E%3Ccircle cx='33' cy='21' r='1'/%3E%3Ccircle cx='39' cy='21' r='1'/%3E%3Ccircle cx='45' cy='21' r='1'/%3E%3Ccircle cx='51' cy='21' r='1'/%3E%3Ccircle cx='57' cy='21' r='1'/%3E%3Ccircle cx='3' cy='27' r='1'/%3E%3Ccircle cx='9' cy='27' r='1'/%3E%3Ccircle cx='15' cy='27' r='1'/%3E%3Ccircle cx='21' cy='27' r='1'/%3E%3Ccircle cx='27' cy='27' r='1'/%3E%3Ccircle cx='33' cy='27' r='1'/%3E%3Ccircle cx='39' cy='27' r='1'/%3E%3Ccircle cx='45' cy='27' r='1'/%3E%3Ccircle cx='51' cy='27' r='1'/%3E%3Ccircle cx='57' cy='27' r='1'/%3E%3Ccircle cx='3' cy='33' r='1'/%3E%3Ccircle cx='9' cy='33' r='1'/%3E%3Ccircle cx='15' cy='33' r='1'/%3E%3Ccircle cx='21' cy='33' r='1'/%3E%3Ccircle cx='27' cy='33' r='1'/%3E%3Ccircle cx='33' cy='33' r='1'/%3E%3Ccircle cx='39' cy='33' r='1'/%3E%3Ccircle cx='45' cy='33' r='1'/%3E%3Ccircle cx='51' cy='33' r='1'/%3E%3Ccircle cx='57' cy='33' r='1'/%3E%3Ccircle cx='3' cy='39' r='1'/%3E%3Ccircle cx='9' cy='39' r='1'/%3E%3Ccircle cx='15' cy='39' r='1'/%3E%3Ccircle cx='21' cy='39' r='1'/%3E%3Ccircle cx='27' cy='39' r='1'/%3E%3Ccircle cx='33' cy='39' r='1'/%3E%3Ccircle cx='39' cy='39' r='1'/%3E%3Ccircle cx='45' cy='39' r='1'/%3E%3Ccircle cx='51' cy='39' r='1'/%3E%3Ccircle cx='57' cy='39' r='1'/%3E%3Ccircle cx='3' cy='45' r='1'/%3E%3Ccircle cx='9' cy='45' r='1'/%3E%3Ccircle cx='15' cy='45' r='1'/%3E%3Ccircle cx='21' cy='45' r='1'/%3E%3Ccircle cx='27' cy='45' r='1'/%3E%3Ccircle cx='33' cy='45' r='1'/%3E%3Ccircle cx='39' cy='45' r='1'/%3E%3Ccircle cx='45' cy='45' r='1'/%3E%3Ccircle cx='51' cy='45' r='1'/%3E%3Ccircle cx='57' cy='45' r='1'/%3E%3Ccircle cx='3' cy='51' r='1'/%3E%3Ccircle cx='9' cy='51' r='1'/%3E%3Ccircle cx='15' cy='51' r='1'/%3E%3Ccircle cx='21' cy='51' r='1'/%3E%3Ccircle cx='27' cy='51' r='1'/%3E%3Ccircle cx='33' cy='51' r='1'/%3E%3Ccircle cx='39' cy='51' r='1'/%3E%3Ccircle cx='45' cy='51' r='1'/%3E%3Ccircle cx='51' cy='51' r='1'/%3E%3Ccircle cx='57' cy='51' r='1'/%3E%3Ccircle cx='3' cy='57' r='1'/%3E%3Ccircle cx='9' cy='57' r='1'/%3E%3Ccircle cx='15' cy='57' r='1'/%3E%3Ccircle cx='21' cy='57' r='1'/%3E%3Ccircle cx='27' cy='57' r='1'/%3E%3Ccircle cx='33' cy='57' r='1'/%3E%3Ccircle cx='39' cy='57' r='1'/%3E%3Ccircle cx='45' cy='57' r='1'/%3E%3Ccircle cx='51' cy='57' r='1'/%3E%3Ccircle cx='57' cy='57' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .color2 {
   background-color: $color2;
+  background: #58a8fb
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpolygon points='0 0 0 4 4 0'/%3E%3Cpolygon points='6 0 6 4 10 0'/%3E%3Cpolygon points='12 0 12 4 16 0'/%3E%3Cpolygon points='18 0 18 4 22 0'/%3E%3Cpolygon points='24 0 24 4 28 0'/%3E%3Cpolygon points='30 0 30 4 34 0'/%3E%3Cpolygon points='36 0 36 4 40 0'/%3E%3Cpolygon points='42 0 42 4 46 0'/%3E%3Cpolygon points='48 0 48 4 52 0'/%3E%3Cpolygon points='54 0 54 4 58 0'/%3E%3Cpolygon points='0 6 0 10 4 6'/%3E%3Cpolygon points='6 6 6 10 10 6'/%3E%3Cpolygon points='12 6 12 10 16 6'/%3E%3Cpolygon points='18 6 18 10 22 6'/%3E%3Cpolygon points='24 6 24 10 28 6'/%3E%3Cpolygon points='30 6 30 10 34 6'/%3E%3Cpolygon points='36 6 36 10 40 6'/%3E%3Cpolygon points='42 6 42 10 46 6'/%3E%3Cpolygon points='48 6 48 10 52 6'/%3E%3Cpolygon points='54 6 54 10 58 6'/%3E%3Cpolygon points='0 12 0 16 4 12'/%3E%3Cpolygon points='6 12 6 16 10 12'/%3E%3Cpolygon points='12 12 12 16 16 12'/%3E%3Cpolygon points='18 12 18 16 22 12'/%3E%3Cpolygon points='24 12 24 16 28 12'/%3E%3Cpolygon points='30 12 30 16 34 12'/%3E%3Cpolygon points='36 12 36 16 40 12'/%3E%3Cpolygon points='42 12 42 16 46 12'/%3E%3Cpolygon points='48 12 48 16 52 12'/%3E%3Cpolygon points='54 12 54 16 58 12'/%3E%3Cpolygon points='0 18 0 22 4 18'/%3E%3Cpolygon points='6 18 6 22 10 18'/%3E%3Cpolygon points='12 18 12 22 16 18'/%3E%3Cpolygon points='18 18 18 22 22 18'/%3E%3Cpolygon points='24 18 24 22 28 18'/%3E%3Cpolygon points='30 18 30 22 34 18'/%3E%3Cpolygon points='36 18 36 22 40 18'/%3E%3Cpolygon points='42 18 42 22 46 18'/%3E%3Cpolygon points='48 18 48 22 52 18'/%3E%3Cpolygon points='54 18 54 22 58 18'/%3E%3Cpolygon points='0 24 0 28 4 24'/%3E%3Cpolygon points='6 24 6 28 10 24'/%3E%3Cpolygon points='12 24 12 28 16 24'/%3E%3Cpolygon points='18 24 18 28 22 24'/%3E%3Cpolygon points='24 24 24 28 28 24'/%3E%3Cpolygon points='30 24 30 28 34 24'/%3E%3Cpolygon points='36 24 36 28 40 24'/%3E%3Cpolygon points='42 24 42 28 46 24'/%3E%3Cpolygon points='48 24 48 28 52 24'/%3E%3Cpolygon points='54 24 54 28 58 24'/%3E%3Cpolygon points='0 30 0 34 4 30'/%3E%3Cpolygon points='6 30 6 34 10 30'/%3E%3Cpolygon points='12 30 12 34 16 30'/%3E%3Cpolygon points='18 30 18 34 22 30'/%3E%3Cpolygon points='24 30 24 34 28 30'/%3E%3Cpolygon points='30 30 30 34 34 30'/%3E%3Cpolygon points='36 30 36 34 40 30'/%3E%3Cpolygon points='42 30 42 34 46 30'/%3E%3Cpolygon points='48 30 48 34 52 30'/%3E%3Cpolygon points='54 30 54 34 58 30'/%3E%3Cpolygon points='0 36 0 40 4 36'/%3E%3Cpolygon points='6 36 6 40 10 36'/%3E%3Cpolygon points='12 36 12 40 16 36'/%3E%3Cpolygon points='18 36 18 40 22 36'/%3E%3Cpolygon points='24 36 24 40 28 36'/%3E%3Cpolygon points='30 36 30 40 34 36'/%3E%3Cpolygon points='36 36 36 40 40 36'/%3E%3Cpolygon points='42 36 42 40 46 36'/%3E%3Cpolygon points='48 36 48 40 52 36'/%3E%3Cpolygon points='54 36 54 40 58 36'/%3E%3Cpolygon points='0 42 0 46 4 42'/%3E%3Cpolygon points='6 42 6 46 10 42'/%3E%3Cpolygon points='12 42 12 46 16 42'/%3E%3Cpolygon points='18 42 18 46 22 42'/%3E%3Cpolygon points='24 42 24 46 28 42'/%3E%3Cpolygon points='30 42 30 46 34 42'/%3E%3Cpolygon points='36 42 36 46 40 42'/%3E%3Cpolygon points='42 42 42 46 46 42'/%3E%3Cpolygon points='48 42 48 46 52 42'/%3E%3Cpolygon points='54 42 54 46 58 42'/%3E%3Cpolygon points='0 48 0 52 4 48'/%3E%3Cpolygon points='6 48 6 52 10 48'/%3E%3Cpolygon points='12 48 12 52 16 48'/%3E%3Cpolygon points='18 48 18 52 22 48'/%3E%3Cpolygon points='24 48 24 52 28 48'/%3E%3Cpolygon points='30 48 30 52 34 48'/%3E%3Cpolygon points='36 48 36 52 40 48'/%3E%3Cpolygon points='42 48 42 52 46 48'/%3E%3Cpolygon points='48 48 48 52 52 48'/%3E%3Cpolygon points='54 48 54 52 58 48'/%3E%3Cpolygon points='0 54 0 58 4 54'/%3E%3Cpolygon points='6 54 6 58 10 54'/%3E%3Cpolygon points='12 54 12 58 16 54'/%3E%3Cpolygon points='18 54 18 58 22 54'/%3E%3Cpolygon points='24 54 24 58 28 54'/%3E%3Cpolygon points='30 54 30 58 34 54'/%3E%3Cpolygon points='36 54 36 58 40 54'/%3E%3Cpolygon points='42 54 42 58 46 54'/%3E%3Cpolygon points='48 54 48 58 52 54'/%3E%3Cpolygon points='54 54 54 58 58 54'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .color3 {
   background-color: $color3;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .color4 {
   background-color: $color4;
+  background: #3253ef
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M0 0l6 6v6H0V0zM12 0l6 6v6H12V0zM24 0l6 6v6H24V0zM36 0l6 6v6H36V0zM48 0l6 6v6H48V0zM0 12l6 6v6H0V12zM12 12l6 6v6H12V12zM24 12l6 6v6H24V12zM36 12l6 6v6H36V12zM48 12l6 6v6H48V12zM0 24l6 6v6H0V24zM12 24l6 6v6H12V24zM24 24l6 6v6H24V24zM36 24l6 6v6H36V24zM48 24l6 6v6H48V24zM0 36l6 6v6H0V36zM12 36l6 6v6H12V36zM24 36l6 6v6H24V36zM36 36l6 6v6H36V36zM48 36l6 6v6H48V36zM0 48l6 6v6H0V48zM12 48l6 6v6H12V48zM24 48l6 6v6H24V48zM36 48l6 6v6H36V48zM48 48l6 6v6H48V48z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 .color5 {
   background-color: $color5;
+  background: #efad4e
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3Ccircle cx='9' cy='3' r='1'/%3E%3Ccircle cx='15' cy='3' r='1'/%3E%3Ccircle cx='21' cy='3' r='1'/%3E%3Ccircle cx='27' cy='3' r='1'/%3E%3Ccircle cx='33' cy='3' r='1'/%3E%3Ccircle cx='39' cy='3' r='1'/%3E%3Ccircle cx='45' cy='3' r='1'/%3E%3Ccircle cx='51' cy='3' r='1'/%3E%3Ccircle cx='57' cy='3' r='1'/%3E%3Ccircle cx='3' cy='9' r='1'/%3E%3Ccircle cx='9' cy='9' r='1'/%3E%3Ccircle cx='15' cy='9' r='1'/%3E%3Ccircle cx='21' cy='9' r='1'/%3E%3Ccircle cx='27' cy='9' r='1'/%3E%3Ccircle cx='33' cy='9' r='1'/%3E%3Ccircle cx='39' cy='9' r='1'/%3E%3Ccircle cx='45' cy='9' r='1'/%3E%3Ccircle cx='51' cy='9' r='1'/%3E%3Ccircle cx='57' cy='9' r='1'/%3E%3Ccircle cx='3' cy='15' r='1'/%3E%3Ccircle cx='9' cy='15' r='1'/%3E%3Ccircle cx='15' cy='15' r='1'/%3E%3Ccircle cx='21' cy='15' r='1'/%3E%3Ccircle cx='27' cy='15' r='1'/%3E%3Ccircle cx='33' cy='15' r='1'/%3E%3Ccircle cx='39' cy='15' r='1'/%3E%3Ccircle cx='45' cy='15' r='1'/%3E%3Ccircle cx='51' cy='15' r='1'/%3E%3Ccircle cx='57' cy='15' r='1'/%3E%3Ccircle cx='3' cy='21' r='1'/%3E%3Ccircle cx='9' cy='21' r='1'/%3E%3Ccircle cx='15' cy='21' r='1'/%3E%3Ccircle cx='21' cy='21' r='1'/%3E%3Ccircle cx='27' cy='21' r='1'/%3E%3Ccircle cx='33' cy='21' r='1'/%3E%3Ccircle cx='39' cy='21' r='1'/%3E%3Ccircle cx='45' cy='21' r='1'/%3E%3Ccircle cx='51' cy='21' r='1'/%3E%3Ccircle cx='57' cy='21' r='1'/%3E%3Ccircle cx='3' cy='27' r='1'/%3E%3Ccircle cx='9' cy='27' r='1'/%3E%3Ccircle cx='15' cy='27' r='1'/%3E%3Ccircle cx='21' cy='27' r='1'/%3E%3Ccircle cx='27' cy='27' r='1'/%3E%3Ccircle cx='33' cy='27' r='1'/%3E%3Ccircle cx='39' cy='27' r='1'/%3E%3Ccircle cx='45' cy='27' r='1'/%3E%3Ccircle cx='51' cy='27' r='1'/%3E%3Ccircle cx='57' cy='27' r='1'/%3E%3Ccircle cx='3' cy='33' r='1'/%3E%3Ccircle cx='9' cy='33' r='1'/%3E%3Ccircle cx='15' cy='33' r='1'/%3E%3Ccircle cx='21' cy='33' r='1'/%3E%3Ccircle cx='27' cy='33' r='1'/%3E%3Ccircle cx='33' cy='33' r='1'/%3E%3Ccircle cx='39' cy='33' r='1'/%3E%3Ccircle cx='45' cy='33' r='1'/%3E%3Ccircle cx='51' cy='33' r='1'/%3E%3Ccircle cx='57' cy='33' r='1'/%3E%3Ccircle cx='3' cy='39' r='1'/%3E%3Ccircle cx='9' cy='39' r='1'/%3E%3Ccircle cx='15' cy='39' r='1'/%3E%3Ccircle cx='21' cy='39' r='1'/%3E%3Ccircle cx='27' cy='39' r='1'/%3E%3Ccircle cx='33' cy='39' r='1'/%3E%3Ccircle cx='39' cy='39' r='1'/%3E%3Ccircle cx='45' cy='39' r='1'/%3E%3Ccircle cx='51' cy='39' r='1'/%3E%3Ccircle cx='57' cy='39' r='1'/%3E%3Ccircle cx='3' cy='45' r='1'/%3E%3Ccircle cx='9' cy='45' r='1'/%3E%3Ccircle cx='15' cy='45' r='1'/%3E%3Ccircle cx='21' cy='45' r='1'/%3E%3Ccircle cx='27' cy='45' r='1'/%3E%3Ccircle cx='33' cy='45' r='1'/%3E%3Ccircle cx='39' cy='45' r='1'/%3E%3Ccircle cx='45' cy='45' r='1'/%3E%3Ccircle cx='51' cy='45' r='1'/%3E%3Ccircle cx='57' cy='45' r='1'/%3E%3Ccircle cx='3' cy='51' r='1'/%3E%3Ccircle cx='9' cy='51' r='1'/%3E%3Ccircle cx='15' cy='51' r='1'/%3E%3Ccircle cx='21' cy='51' r='1'/%3E%3Ccircle cx='27' cy='51' r='1'/%3E%3Ccircle cx='33' cy='51' r='1'/%3E%3Ccircle cx='39' cy='51' r='1'/%3E%3Ccircle cx='45' cy='51' r='1'/%3E%3Ccircle cx='51' cy='51' r='1'/%3E%3Ccircle cx='57' cy='51' r='1'/%3E%3Ccircle cx='3' cy='57' r='1'/%3E%3Ccircle cx='9' cy='57' r='1'/%3E%3Ccircle cx='15' cy='57' r='1'/%3E%3Ccircle cx='21' cy='57' r='1'/%3E%3Ccircle cx='27' cy='57' r='1'/%3E%3Ccircle cx='33' cy='57' r='1'/%3E%3Ccircle cx='39' cy='57' r='1'/%3E%3Ccircle cx='45' cy='57' r='1'/%3E%3Ccircle cx='51' cy='57' r='1'/%3E%3Ccircle cx='57' cy='57' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
 /* FEATURED SECTION */
@@ -204,9 +239,12 @@ header {
     background-color: #000;
     text-align: center;
     cursor: pointer;
+    border-radius: 10px;
     box-shadow: 8px 8px 0px #000;
     img {
       width: 100%;
+      border-radius: 10px;
+
       display: block;
     }
   }
@@ -250,11 +288,14 @@ header {
   .album {
     background-color: #000;
     text-align: center;
+    border-radius: 8px;
+
     cursor: pointer;
     box-shadow: 8px 8px 0px #000;
     img {
       width: 100%;
       display: block;
+      border-radius: 8px;
     }
   }
 }
@@ -273,6 +314,7 @@ header {
     align-items: center;
     border: 2px solid white;
     padding: 1rem;
+    background: #1d1b28;
   }
 
   .show-info {
@@ -285,7 +327,7 @@ header {
     }
 
     .show-date {
-      font-family: sans-serif;
+      font-family: "Archivo Black", serif;
       font-size: 0.9rem;
       color: white;
       margin-top: 0.25rem;
@@ -392,7 +434,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
   }
 }
 
@@ -413,7 +455,7 @@ header {
   margin: 0 auto;
 
   a {
-    color: #fff;
+    color: #000;
     text-decoration: underline;
     &:hover {
       text-decoration: none;
@@ -422,6 +464,7 @@ header {
 
   p {
     margin-bottom: 1rem;
+    text-align: center;
   }
 }
 

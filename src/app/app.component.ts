@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
 import { MarqueeComponent } from './marquee/marquee.component';
 import { CommonModule } from '@angular/common';
 import { NgTiltModule } from '@geometricpanda/angular-tilt';
@@ -18,6 +18,9 @@ export class AppComponent {
   firstLoad = true;
   isMobileMenuOpen = false;
   isMobile = false;
+  isSocialIconsFaded = false;
+
+  @ViewChild('socialIcons') socialIconsElement!: ElementRef;
 
   ngOnInit() {
     this.checkIfMobile();
@@ -48,11 +51,16 @@ export class AppComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
+    // header fade logic
     const musicSection = document.getElementById('main-header');
     if (musicSection) {
       const musicSectionRect = musicSection.getBoundingClientRect();
       this.showHeader = window.scrollY > musicSectionRect.bottom;
       if (this.showHeader) this.firstLoad = false;
     }
+    // social icons fade logic
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    this.isSocialIconsFaded = scrollPosition + 50 > documentHeight;
   }
 }
