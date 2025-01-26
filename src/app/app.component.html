@@ -10,8 +10,9 @@
         src="assets/images/chef-logo.svg"
         alt="Chef Band Logo"
         class="band-logo"
+        (click)="scrollToSection('main-header')"
       />
-      <div class="marquee-wrapper">
+      <div class="marquee-wrapper hide-mobile">
         <div class="paren">(</div>
         <div class="ticker">
           <app-marquee>
@@ -23,8 +24,18 @@
     </div>
 
     <!-- Menu -->
-    <nav>
-      <ul>
+
+    <nav [class.mobile-nav]="isMobile">
+      <button
+        class="hamburger-menu"
+        (click)="toggleMobileMenu()"
+        *ngIf="isMobile"
+      >
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </button>
+      <ul *ngIf="isMobileMenuOpen || !isMobile" [class.open]="isMobileMenuOpen">
         <li><a (click)="scrollToSection('music')">Music</a></li>
         <li><a (click)="scrollToSection('live')">Live</a></li>
         <li><a (click)="scrollToSection('merch')">Merch</a></li>
@@ -66,8 +77,8 @@
 </div>
 
 <!-- MUSIC SECTION -->
-<section id="music">
-  <div id="music-header" class="section-header music-header">
+<section>
+  <div id="main-header" class="section-header music-header">
     <div [class.fade-out]="showHeader" class="d-flex-col">
       <img
         src="assets/images/chef-logo.svg"
@@ -85,7 +96,7 @@
       </div>
     </div>
   </div>
-  <div class="section-content color-block color1">
+  <div class="section-content color-block color1" id="music">
     <div class="album-grid">
       <a
         href="https://open.spotify.com/track/2yXUcLQFQM8PGVOW2B9sMo?si=4db3e84332f24e19"
@@ -153,58 +164,31 @@
     <h1>Live</h1>
   </div>
   <div class="section-content color-block color2">
-    <table class="shows-table hide-mobile">
-      <tbody>
-        <tr>
-          <td>1/25/25</td>
-          <td>C.H.E.F. LIVE AT SCHUBAS</td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-        <tr>
-          <td>02/10/2025</td>
-          <td>Placeholder Venue 2</td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-        <tr>
-          <td>03/20/2025</td>
-          <td>Placeholder Venue 3</td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-    <table class="shows-table">
-      <tbody>
-        <tr>
-          <td>
-            C.H.E.F. LIVE AT SCHUBAS <br />
-            1/25/25
-          </td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-        <tr>
-          <td>02/10/2025</td>
-          <td>Placeholder Venue 2</td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-        <tr>
-          <td>03/20/2025</td>
-          <td>Placeholder Venue 3</td>
-          <td>
-            <button>Tickets</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="shows-flex-container">
+      <div class="show-item">
+        <div class="show-info">
+          <div class="show-name">C.H.E.F. LIVE &#64; SCHUBAS</div>
+          <div class="show-date">1/25/25</div>
+        </div>
+        <a href="https://lh-st.com/shows/01-25-2025-chef/">
+          <button class="ticket-button">Tickets</button>
+        </a>
+      </div>
+      <div class="show-item">
+        <div class="show-info">
+          <div class="show-name">Placeholder Venue 2</div>
+          <div class="show-date">2/10/25</div>
+        </div>
+        <button class="ticket-button">Tickets</button>
+      </div>
+      <div class="show-item">
+        <div class="show-info">
+          <div class="show-name">Placeholder Venue 3</div>
+          <div class="show-date">3/7/25</div>
+        </div>
+        <button class="ticket-button">Tickets</button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -219,18 +203,22 @@
       <div class="merch-item">
         <img src="assets/images/merch/apron.png" alt="Merch 1" />
         <p>Apron!</p>
+        <span class="price-tag">$20</span>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/cubby.png" alt="Merch 2" />
         <p>Cubby Bear Tee!</p>
+        <span class="price-tag">$25</span>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/sticker.png" alt="Merch 3" />
         <p>Stickers!</p>
+        <span class="price-tag">$5</span>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/tote.png" alt="Merch 4" />
         <p>Tote!</p>
+        <span class="price-tag">$15</span>
       </div>
     </div>
   </div>
@@ -248,6 +236,8 @@
         variety of ingredients to its sound; including funk, psychedelia, blues,
         alternative, hip hop, jazz, classic rock, and electronic.
       </p>
+      <br />
+      <hr />
       <br />
       <p>Cuppla'. Homies. Exchanging. Frequencies.</p>
       <p>Chicago. Homegrown. Established. Funk.</p>
@@ -268,7 +258,7 @@
         <!-- Replace placeholders with real contact links -->
         Email:
         <a href="mailto:CHEFbandbooking@gmail.com"
-          >CHEFbandbooking&#64;gmail.com</a
+          >CHEFbandbookingATgmail.com</a
         >
       </p>
       <p>

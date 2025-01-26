@@ -23,33 +23,33 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  //   background-color: #1d1b28;
   background-color: transparent;
   z-index: 999;
   .header-content {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     padding: 1rem 2rem;
     min-height: 52px;
   }
   .band-logo {
-    width: 100px; /* Adjust as needed */
+    width: 100px;
     height: auto;
     float: left;
+    cursor: pointer;
   }
   nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 2rem;
+    gap: 1.5rem;
   }
   nav a {
     text-decoration: none;
     color: #fff;
     font-family: "Archivo Black", serif;
     transition: color 0.3s;
+    cursor: pointer;
     &:hover {
       color: $color1;
     }
@@ -57,9 +57,9 @@ header {
 }
 
 .band-logo-lg {
-  width: 400px; /* Adjust as needed */
-  height: auto;
-  float: left;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* SOCIAL MEDIA ICONS */
@@ -70,27 +70,21 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  z-index: 1000; /* Ensure it's above other content */
+  z-index: 1000;
 
   a {
-    display: block; /* Make the links occupy the full width of the container */
+    display: block;
     line-height: 0;
     &:hover {
       filter: brightness(20%);
     }
     img {
-      width: 30px; /* Adjust icon size as needed */
+      width: 30px;
       height: 30px;
-      filter: invert(100%); /* Make icons white */
+      filter: invert(100%);
     }
   }
 }
-
-/* 
-  * Each section's "header" has a parallax background 
-  * They are shown in pairs: the parallax background 
-  * followed by a color block containing content.
-  */
 
 .section-header {
   position: relative;
@@ -117,7 +111,6 @@ header {
     color: #fff;
   }
 }
-
 /* Apply dimming filter to music-header background */
 .music-header {
   background-image: url("/assets/images/music-bg.jpg");
@@ -130,13 +123,8 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(
-      0,
-      0,
-      0,
-      0.5
-    ); /* Adjust the alpha value for desired dimming */
-    z-index: 1; /* Place the overlay behind the content but in front of the background image */
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
   }
 
   /* Ensure content is above the overlay */
@@ -196,12 +184,10 @@ header {
   }
 
   .album {
+    background-color: #000;
     text-align: center;
     cursor: pointer;
-    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
-
+    box-shadow: 8px 8px 0px #000;
     img {
       width: 100%;
       display: block;
@@ -210,35 +196,50 @@ header {
 }
 
 /* LIVE SECTION */
-.shows-table {
-  font-family: "Archivo Black", serif;
-  width: 100%;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  th,
-  td {
-    padding: 0.75rem;
-    text-align: left;
+.shows-flex-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 50%;
+  margin: 0 auto;
+
+  .show-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid white;
+    padding: 1rem;
   }
-  tbody tr {
-    border-bottom: 1px solid #fff; /* Row borders only */
-    &:first-child {
-      border-top: 1px solid #fff;
+
+  .show-info {
+    text-align: left;
+
+    .show-name {
+      font-family: "Archivo Black", serif;
+      font-size: 1.2rem;
+      color: white;
+    }
+
+    .show-date {
+      font-family: sans-serif;
+      font-size: 0.9rem;
+      color: white;
+      margin-top: 0.25rem;
     }
   }
-  button {
-    float: right;
+
+  .ticket-button {
     font-family: "Archivo Black", serif;
     cursor: pointer;
     background-color: #000;
     color: #fff;
-    border: 2px solid #fff;
-    padding: 0.5rem 1rem;
+    border: none;
+    padding: 0.75rem 1.5rem;
     transition: background-color 0.3s;
+    box-shadow: 4px 4px 0px #fff; /* Skeuomorphic shadow */
     &:hover {
       background-color: $color1;
-      border-color: $color1;
+      box-shadow: 4px 4px 0px $color1;
     }
   }
 }
@@ -246,23 +247,88 @@ header {
 /* MERCH SECTION */
 .merch-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
   text-align: center;
-  max-width: 75%;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 90%;
+  margin: 2rem auto;
 
   .merch-item {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 4px solid black;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.4);
+    position: relative; /* For price tag positioning */
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
     img {
       width: 100%;
-      max-width: 90%;
+      max-width: 300px;
       height: auto;
+      border-bottom: 2px solid black;
+      margin-bottom: 0.5rem;
+      margin-left: auto;
+      margin-right: auto;
     }
+
     p {
       font-size: 1.5rem;
-      color: white;
+      color: black;
+      font-weight: bold;
+      margin-top: 0.5rem;
+      margin-bottom: auto;
     }
+
+    /* Price tag */
+    .price-tag {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: $color1;
+      color: white;
+      font-weight: bold;
+      font-family: "Archivo Black", serif;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.3),
+        0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+        0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    }
+    &:nth-child(1) .price-tag {
+      transform: rotate(-5deg);
+    }
+
+    &:nth-child(2) .price-tag {
+      transform: rotate(3deg);
+    }
+
+    &:nth-child(3) .price-tag {
+      transform: rotate(-2deg);
+    }
+
+    &:nth-child(4) .price-tag {
+      transform: rotate(4deg);
+    }
+  }
+}
+
+/* Add some "noise" to the merch section background */
+.color3 {
+  background-color: $color3;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 }
 
@@ -302,9 +368,14 @@ header {
   }
   .section-header {
     h1 {
-      font-size: 5em;
+      font-size: 4em;
       width: 100%;
     }
+    height: 300px;
+  }
+
+  .band-logo-lg {
+    width: 250px;
   }
 
   header .header-content {
@@ -316,6 +387,59 @@ header {
         justify-content: center;
       }
     }
+  }
+  .shows-flex-container {
+    width: 100%;
+  }
+  nav {
+    margin-left: auto;
+    margin-right: 0;
+    ul {
+      display: none;
+    }
+    &.mobile-nav {
+      .hamburger-menu {
+        display: block;
+        z-index: 1000;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        .bar {
+          width: 25px;
+          height: 3px;
+          background-color: #fff;
+          margin: 5px 0;
+          transition: 0.4s;
+        }
+      }
+      ul {
+        &.open {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.95);
+          z-index: 999;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          li {
+            margin-bottom: 2rem;
+            a {
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .hamburger-menu {
+    display: none;
   }
 }
 
@@ -348,73 +472,7 @@ nav {
 
 .marquee-wrapper {
   margin-top: 9px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
-}
-/* ----------------------------------------------
- * Generated by Animista on 2025-1-19 18:53:3
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation fade-in
- * ----------------------------------------
- */
-@-webkit-keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.fade-in {
-  -webkit-animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fade-in 0.8s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-}
-
-.fade-out {
-  -webkit-animation: fade-out 0.3s ease-out both;
-  animation: fade-out 0.3s ease-out both;
-}
-
-/* ----------------------------------------------
- * Generated by Animista on 2025-1-19 19:2:18
- * Licensed under FreeBSD License.
- * See http://animista.net/license for more info. 
- * w: http://animista.net, t: @cssanimista
- * ---------------------------------------------- */
-
-/**
- * ----------------------------------------
- * animation fade-out
- * ----------------------------------------
- */
-@-webkit-keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
 }

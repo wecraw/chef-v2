@@ -16,17 +16,39 @@ export class AppComponent {
   title = 'chef-frontend';
   showHeader = false;
   firstLoad = true;
+  isMobileMenuOpen = false;
+  isMobile = false;
+
+  ngOnInit() {
+    this.checkIfMobile();
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkIfMobile();
+  }
+
+  checkIfMobile() {
+    this.isMobile = window.innerWidth <= 768;
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
 
   scrollToSection(sectionId: string) {
     const element = document.querySelector('#' + sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (this.isMobile) {
+        this.isMobileMenuOpen = false;
+      }
     }
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
-    const musicSection = document.getElementById('music-header');
+    const musicSection = document.getElementById('main-header');
     if (musicSection) {
       const musicSectionRect = musicSection.getBoundingClientRect();
       this.showHeader = window.scrollY > musicSectionRect.bottom;
