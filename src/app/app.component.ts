@@ -3,11 +3,12 @@ import { MarqueeComponent } from './marquee/marquee.component';
 import { CommonModule } from '@angular/common';
 import { NgTiltModule } from '@geometricpanda/angular-tilt';
 import { chefNames } from './chefNames';
+import { WeatherComponent } from './weather/weather.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MarqueeComponent, CommonModule, NgTiltModule],
+  imports: [MarqueeComponent, CommonModule, NgTiltModule, WeatherComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
