@@ -1,26 +1,30 @@
+<app-weather class="main-weather"></app-weather>
+
 <header>
   <div class="header-content">
     <div
       *ngIf="!firstLoad"
-      class="d-flex fade-in"
+      class="d-flex-col fade-in"
       [class.fade-out]="!showHeader"
     >
-      <app-weather></app-weather>
+      <div class="d-flex">
+        <!-- Band logo (placeholder PNG) -->
+        <img
+          src="assets/images/chef-logo.svg"
+          alt="Chef Band Logo"
+          class="band-logo"
+          (click)="scrollToSection('main-header')"
+        />
 
-      <!-- Band logo (placeholder PNG) -->
-      <img
-        src="assets/images/chef-logo.svg"
-        alt="Chef Band Logo"
-        class="band-logo"
-        (click)="scrollToSection('main-header')"
-      />
-      <div class="marquee-wrapper hide-mobile">
-        <div class="ticker">
-          <app-marquee>
-            <span *ngFor="let name of chefNames"> {{ name }} •</span>
-          </app-marquee>
+        <div class="marquee-wrapper hide-mobile">
+          <div class="ticker">
+            <app-marquee>
+              <span *ngFor="let name of chefNames"> {{ name }} •</span>
+            </app-marquee>
+          </div>
         </div>
       </div>
+      <app-weather></app-weather>
     </div>
 
     <!-- Menu -->

@@ -31,7 +31,7 @@ import {
         background-color: #000;
         color: #fff;
         font-family: 'Archivo Black', serif;
-        height: 35px;
+        height: 50px;
         display: flex;
         align-items: center;
         position: relative;
