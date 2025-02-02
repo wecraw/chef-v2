@@ -247,20 +247,6 @@ header {
     }
   }
 
-  .ticket-button {
-    font-family: "Archivo Black", serif;
-    cursor: pointer;
-    background-color: #4ea0e7;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.5rem;
-    transition: background-color 0.3s;
-    box-shadow: 4px 4px 0px #fff; /* Skeuomorphic shadow */
-    &:hover {
-      background-color: $color1;
-      box-shadow: 4px 4px 0px $color1;
-    }
-  }
   .album {
     background-color: #000;
     text-align: center;
@@ -356,6 +342,7 @@ header {
 
   .show-info {
     text-align: left;
+    margin-right: 5px;
 
     .show-name {
       font-family: "Archivo Black", serif;
@@ -372,6 +359,7 @@ header {
   }
 
   .ticket-button {
+    min-width: 143px;
     font-family: "Archivo Black", serif;
     cursor: pointer;
     background-color: #000;
