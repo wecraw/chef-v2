@@ -1,4 +1,5 @@
 import { Component, HostListener, ElementRef, ViewChild } from '@angular/core';
+import { MarqueeFullscreenComponent } from './marquee-fullscreen/marquee-fullscreen.component';
 import { MarqueeComponent } from './marquee/marquee.component';
 import { CommonModule } from '@angular/common';
 import { NgTiltModule } from '@geometricpanda/angular-tilt';
@@ -8,7 +9,13 @@ import { WeatherComponent } from './weather/weather.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MarqueeComponent, CommonModule, NgTiltModule, WeatherComponent],
+  imports: [
+    MarqueeFullscreenComponent,
+    CommonModule,
+    NgTiltModule,
+    WeatherComponent,
+    MarqueeComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
@@ -53,11 +60,20 @@ export class AppComponent {
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     // header fade logic
-    const musicSection = document.getElementById('main-header');
-    if (musicSection) {
-      const musicSectionRect = musicSection.getBoundingClientRect();
-      this.showHeader = window.scrollY > musicSectionRect.bottom;
-      if (this.showHeader) this.firstLoad = false;
+    const marquee = document.getElementById('marquee-fullscreen');
+    if (marquee) {
+      const rect = marquee.getBoundingClientRect();
+      // The element is considered in the viewport if its top is less than the viewport height
+      // and its bottom is greater than 0 (i.e. at least partially visible)
+      const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+
+      // Update showHeader based on whether the marquee is visible.
+      // For example, you might want to hide the header when the marquee is visible:
+      this.showHeader = !isInViewport;
+
+      if (this.showHeader) {
+        this.firstLoad = false;
+      }
     }
     // social icons fade logic
     const scrollPosition = window.scrollY + window.innerHeight;

@@ -4,12 +4,7 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
   selector: 'app-marquee',
   standalone: true,
   template: `
-    <div
-      class="marquee"
-      [style.animation-duration]="60 + 's'"
-      [style.transform]="initialTransform"
-      (animationiteration)="handleAnimationIteration()"
-    >
+    <div class="marquee" [style.animation-duration]="90 + 's'">
       <ng-content></ng-content>
     </div>
   `,
@@ -17,6 +12,8 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
     `
       .marquee {
         white-space: nowrap;
+        font-size: 12px;
+        height: 20px;
         animation: marquee-animation linear infinite;
       }
 
@@ -31,41 +28,4 @@ import { Component, Input, OnInit, OnDestroy } from '@angular/core';
     `,
   ],
 })
-export class MarqueeComponent implements OnInit, OnDestroy {
-  @Input() speed: number = 5; // Speed of scrolling in pixels per second
-  @Input() initialScrollOffset: number = 0; // Initial scroll offset in pixels
-  animationDuration!: string;
-  initialTransform!: string;
-
-  constructor() {}
-
-  ngOnInit(): void {
-    this.calculateAnimationDuration();
-    this.calculateInitialTransform();
-  }
-
-  ngOnDestroy(): void {
-    // Cleanup
-  }
-
-  calculateAnimationDuration(): void {
-    const width = this.calculateContentWidth() + this.initialScrollOffset;
-    this.animationDuration = `${width / this.speed}s`;
-  }
-
-  calculateContentWidth(): number {
-    const marqueeElement = document.getElementsByClassName(
-      'marquee'
-    )[0] as HTMLElement;
-    return marqueeElement.scrollWidth;
-  }
-
-  calculateInitialTransform(): void {
-    this.initialTransform = `translateX(-${this.initialScrollOffset}px)`;
-  }
-
-  handleAnimationIteration(): void {
-    // Reset the position of the marquee to its initial state
-    this.initialTransform = `translateX(-${this.initialScrollOffset}px)`;
-  }
-}
+export class MarqueeComponent {}

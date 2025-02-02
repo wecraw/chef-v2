@@ -1,5 +1,3 @@
-<app-weather></app-weather>
-
 <header>
   <div class="header-content">
     <div
@@ -7,6 +5,8 @@
       class="d-flex fade-in"
       [class.fade-out]="!showHeader"
     >
+      <app-weather></app-weather>
+
       <!-- Band logo (placeholder PNG) -->
       <img
         src="assets/images/chef-logo.svg"
@@ -15,13 +15,11 @@
         (click)="scrollToSection('main-header')"
       />
       <div class="marquee-wrapper hide-mobile">
-        <div class="paren">(</div>
         <div class="ticker">
           <app-marquee>
             <span *ngFor="let name of chefNames"> {{ name }} •</span>
           </app-marquee>
         </div>
-        <div class="paren">)</div>
       </div>
     </div>
 
@@ -93,26 +91,19 @@
 </div>
 
 <!-- FEAUTRED SECTION -->
-
-<section>
-  <div id="main-header" class="section-header music-header">
-    <div [class.fade-out]="showHeader" class="d-flex-col">
-      <img
-        src="assets/images/chef-logo.svg"
-        alt="Chef Band Logo"
-        class="band-logo-lg"
-      />
-      <div class="marquee-wrapper">
-        <div class="paren">(</div>
-        <div class="ticker">
-          <app-marquee>
-            <span *ngFor="let name of chefNames"> {{ name }} •</span>
-          </app-marquee>
-        </div>
-        <div class="paren">)</div>
-      </div>
-    </div>
+<div id="main-header" class="section-header music-header">
+  <div [class.fade-out]="showHeader" class="d-flex-col">
+    <img
+      src="assets/images/chef-logo.svg"
+      alt="Chef Band Logo"
+      class="band-logo-lg"
+    />
   </div>
+</div>
+<marquee-fullscreen class="marquee-fullscreen" id="marquee-fullscreen"
+  ><span *ngFor="let name of chefNames"> {{ name }} •</span></marquee-fullscreen
+>
+<section>
   <div class="section-content color-block color1 featured-section" id="music">
     <div class="album-featured">
       <a
@@ -234,26 +225,17 @@
     <div class="shows-flex-container">
       <div class="show-item">
         <div class="show-info">
-          <div class="show-name">C.H.E.F. LIVE &#64; SCHUBAS</div>
-          <div class="show-date">1/25/25</div>
+          <div class="show-name">Hard Rock Cafe</div>
+          <div class="show-date">3/1/25</div>
         </div>
-        <a href="https://lh-st.com/shows/01-25-2025-chef/">
-          <button class="ticket-button">Tickets</button>
-        </a>
+        <button disabled class="ticket-button">Tickets Soon</button>
       </div>
       <div class="show-item">
         <div class="show-info">
-          <div class="show-name">Upcoming Venue 2</div>
-          <div class="show-date">2/25/25</div>
+          <div class="show-name">The Gman Tavern</div>
+          <div class="show-date">3/21/25</div>
         </div>
-        <button class="ticket-button">Tickets</button>
-      </div>
-      <div class="show-item">
-        <div class="show-info">
-          <div class="show-name">Upcoming Venue 3</div>
-          <div class="show-date">3/25/25</div>
-        </div>
-        <button class="ticket-button">Tickets</button>
+        <button disabled class="ticket-button">Tickets Soon</button>
       </div>
     </div>
   </div>
@@ -268,22 +250,23 @@
     <div class="merch-grid">
       <div class="merch-item">
         <img src="assets/images/merch/apron.png" alt="Merch 1" />
-        <p>Apron!</p>
+
         <span class="price-tag">$20</span>
+        <p>Apron</p>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/cubby.png" alt="Merch 2" />
-        <p>Cubby Bear Tee!</p>
+        <p>Cubby Bear Tee</p>
         <span class="price-tag">$25</span>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/sticker.png" alt="Merch 3" />
-        <p>Stickers!</p>
+        <p>Stickers</p>
         <span class="price-tag">$5</span>
       </div>
       <div class="merch-item">
         <img src="assets/images/merch/tote.png" alt="Merch 4" />
-        <p>Tote!</p>
+        <p>Tote</p>
         <span class="price-tag">$15</span>
       </div>
     </div>
@@ -333,7 +316,7 @@
           target="_blank"
         >
           <img
-            class="streaming-logo"
+            class="streaming-logo bottom"
             src="../assets/spotify.svg"
             alt="Spotify"
           />
@@ -343,7 +326,7 @@
           target="_blank"
         >
           <img
-            class="streaming-logo"
+            class="streaming-logo bottom"
             src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/applemusic.svg"
             alt="Apple Music"
           />
@@ -351,21 +334,21 @@
 
         <a href="https://www.youtube.com/@CHEFtube" target="_blank">
           <img
-            class="streaming-logo"
+            class="streaming-logo bottom"
             src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/youtube.svg"
             alt="YouTube"
           />
         </a>
         <a href="https://instagram.com/bandcalledchef" target="_blank">
           <img
-            class="streaming-logo"
+            class="streaming-logo bottom"
             src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/instagram.svg"
             alt="Instagram"
           />
         </a>
         <a href="https://tiktok.com/@bandcalledchef" target="_blank">
           <img
-            class="streaming-logo"
+            class="streaming-logo bottom"
             src="https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/tiktok.svg"
             alt="TikTok"
           />
