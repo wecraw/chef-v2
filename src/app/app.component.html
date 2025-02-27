@@ -256,190 +256,85 @@
   </div>
   <div class="section-content color-block color4">
     <div class="merch-grid">
-      <div class="merch-item">
-        <img src="assets/images/merch/apron.png" alt="Merch 1" />
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/apron"
+      >
+        <img src="assets/images/merch/apron.jpg" alt="Merch 1" />
 
         <span class="price-tag">$20</span>
         <p>Apron</p>
-        <div id="product-component-1740631254112"></div>
-        <script type="text/javascript">
-          /*<![CDATA[*/
-          (function () {
-            var scriptURL =
-              "https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js";
-            if (window.ShopifyBuy) {
-              if (window.ShopifyBuy.UI) {
-                ShopifyBuyInit();
-              } else {
-                loadScript();
-              }
-            } else {
-              loadScript();
-            }
-            function loadScript() {
-              var script = document.createElement("script");
-              script.async = true;
-              script.src = scriptURL;
-              (
-                document.getElementsByTagName("head")[0] ||
-                document.getElementsByTagName("body")[0]
-              ).appendChild(script);
-              script.onload = ShopifyBuyInit;
-            }
-            function ShopifyBuyInit() {
-              var client = ShopifyBuy.buildClient({
-                domain: "cyugwc-f2.myshopify.com",
-                storefrontAccessToken: "0af6c2cb60efbe7988175d035777d1fe",
-              });
-              ShopifyBuy.UI.onReady(client).then(function (ui) {
-                ui.createComponent("product", {
-                  id: "9810179391788",
-                  node: document.getElementById(
-                    "product-component-1740631254112"
-                  ),
-                  moneyFormat: "%24%7B%7Bamount%7D%7D",
-                  options: {
-                    product: {
-                      styles: {
-                        product: {
-                          "@media (min-width: 601px)": {
-                            "max-width": "calc(25% - 20px)",
-                            "margin-left": "20px",
-                            "margin-bottom": "50px",
-                          },
-                        },
-                        button: {
-                          "font-weight": "bold",
-                          "font-size": "17px",
-                          "padding-top": "16.5px",
-                          "padding-bottom": "16.5px",
-                          ":hover": {
-                            "background-color": "#e67500",
-                          },
-                          "background-color": "#ff8200",
-                          ":focus": {
-                            "background-color": "#e67500",
-                          },
-                        },
-                        quantityInput: {
-                          "font-size": "17px",
-                          "padding-top": "16.5px",
-                          "padding-bottom": "16.5px",
-                        },
-                      },
-                      text: {
-                        button: "Add to cart",
-                      },
-                    },
-                    productSet: {
-                      styles: {
-                        products: {
-                          "@media (min-width: 601px)": {
-                            "margin-left": "-20px",
-                          },
-                        },
-                      },
-                    },
-                    modalProduct: {
-                      contents: {
-                        img: false,
-                        imgWithCarousel: true,
-                        button: false,
-                        buttonWithQuantity: true,
-                      },
-                      styles: {
-                        product: {
-                          "@media (min-width: 601px)": {
-                            "max-width": "100%",
-                            "margin-left": "0px",
-                            "margin-bottom": "0px",
-                          },
-                        },
-                        button: {
-                          "font-weight": "bold",
-                          "font-size": "17px",
-                          "padding-top": "16.5px",
-                          "padding-bottom": "16.5px",
-                          ":hover": {
-                            "background-color": "#e67500",
-                          },
-                          "background-color": "#ff8200",
-                          ":focus": {
-                            "background-color": "#e67500",
-                          },
-                        },
-                        quantityInput: {
-                          "font-size": "17px",
-                          "padding-top": "16.5px",
-                          "padding-bottom": "16.5px",
-                        },
-                      },
-                      text: {
-                        button: "Add to cart",
-                      },
-                    },
-                    option: {},
-                    cart: {
-                      styles: {
-                        button: {
-                          "font-weight": "bold",
-                          "font-size": "17px",
-                          "padding-top": "16.5px",
-                          "padding-bottom": "16.5px",
-                          ":hover": {
-                            "background-color": "#e67500",
-                          },
-                          "background-color": "#ff8200",
-                          ":focus": {
-                            "background-color": "#e67500",
-                          },
-                        },
-                      },
-                      text: {
-                        total: "Subtotal",
-                        button: "Checkout",
-                      },
-                    },
-                    toggle: {
-                      styles: {
-                        toggle: {
-                          "font-weight": "bold",
-                          "background-color": "#ff8200",
-                          ":hover": {
-                            "background-color": "#e67500",
-                          },
-                          ":focus": {
-                            "background-color": "#e67500",
-                          },
-                        },
-                        count: {
-                          "font-size": "17px",
-                        },
-                      },
-                    },
-                  },
-                });
-              });
-            }
-          })();
-          /*]]>*/
-        </script>
-      </div>
-      <div class="merch-item">
-        <img src="assets/images/merch/cubby.png" alt="Merch 2" />
-        <p>Cubby Bear Tee</p>
-        <span class="price-tag">$25</span>
-      </div>
-      <div class="merch-item">
+      </a>
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/disco-t-shirt"
+      >
+        <img src="assets/images/merch/disco-tee.jpg" alt="Merch 2" />
+        <p>Disco Tee</p>
+        <span class="price-tag">$20</span>
+      </a>
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/sticker-pack"
+      >
         <img src="assets/images/merch/sticker.png" alt="Merch 3" />
         <p>Stickers</p>
-        <span class="price-tag">$5</span>
-      </div>
-      <div class="merch-item">
+        <span class="price-tag">$3</span>
+      </a>
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/c-h-e-f-tote-bag"
+      >
         <img src="assets/images/merch/tote.png" alt="Merch 4" />
-        <p>Tote</p>
+        <p>Tote Bag</p>
         <span class="price-tag">$15</span>
-      </div>
+      </a>
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/hoodie"
+      >
+        <img src="assets/images/merch/hoodie.jpg" alt="Merch 4" />
+        <p>Hoodie</p>
+        <span class="price-tag">$40</span>
+      </a>
+      <a
+        class="merch-item"
+        ngTilt
+        [scale]="1.05"
+        [maxTilt]="10"
+        glare="true"
+        [maxGlare]="0.5"
+        href="https://cyugwc-f2.myshopify.com/products/poster"
+      >
+        <img src="assets/images/merch/poster.jpg" alt="Merch 4" />
+        <p>Poster</p>
+        <span class="price-tag">$18</span>
+      </a>
     </div>
   </div>
 </section>
