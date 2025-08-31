@@ -112,10 +112,10 @@
   ><span *ngFor="let name of chefNames"> {{ name }} •</span></marquee-fullscreen
 >
 <section>
-  <div class="section-content color-block color1 featured-section" id="music">
+  <div class="section-content color-block color7 featured-section" id="music">
     <div class="album-featured">
       <a
-        href="https://open.spotify.com/track/1PA6WpPOjmEtFqVIl3whqE?si=a7232f1d6c354efb"
+        href="https://open.spotify.com/track/1sIzvVlPN5DbiI1BSVKvja?si=00f9fba27b724faf"
         target="_blank"
       >
         <div
@@ -126,21 +126,21 @@
           glare="true"
           [maxGlare]="0.5"
         >
-          <img src="assets/images/fast_johnson.png" alt="Album 4" />
+          <img src="assets/images/let_loose.jpg" alt="Let Loose" />
         </div>
       </a>
     </div>
-    <p class="large">Fast Johnson</p>
+    <p class="large">Let Loose</p>
     <p class="small">Now Streaming</p>
     <div class="streaming-logos">
       <a
-        href="https://open.spotify.com/track/1PA6WpPOjmEtFqVIl3whqE?si=a7232f1d6c354efb"
+        href="https://open.spotify.com/track/1sIzvVlPN5DbiI1BSVKvja?si=00f9fba27b724faf"
         target="_blank"
       >
         <img class="streaming-logo" src="../assets/spotify.svg" alt="Spotify" />
       </a>
       <a
-        href="https://music.apple.com/us/album/fast-johnson-single/1757014199"
+        href="https://music.apple.com/us/album/let-loose/1820099346?i=1820099347"
         target="_blank"
       >
         <img
@@ -220,6 +220,21 @@
           <img src="assets/images/fast_johnson.png" alt="Album 4" />
         </div>
       </a>
+      <a
+        href="https://open.spotify.com/track/1sIzvVlPN5DbiI1BSVKvja?si=00f9fba27b724faf"
+        target="_blank"
+      >
+        <div
+          class="album"
+          ngTilt
+          [scale]="1.05"
+          [maxTilt]="10"
+          glare="true"
+          [maxGlare]="0.5"
+        >
+          <img src="assets/images/let_loose.jpg" alt="Album 5" />
+        </div>
+      </a>
     </div>
   </div>
 </section>
@@ -233,12 +248,13 @@
     <div class="shows-flex-container">
       <div class="show-item">
         <div class="show-info">
-          <div class="show-name">Lincoln Hall</div>
-          <div class="show-date">8/30/25</div>
+          <div class="show-name">Martyrs'</div>
+          <div class="show-date">10/17/25</div>
         </div>
-        <a
-          href="https://lh-st.com/shows/08-30-2025-cheap-monarchy/"
-          ><button class="ticket-button">Tickets</button></a
+        <a class="disabled" href=""
+          ><button [disabled]="true" class="ticket-button">
+            Tickets soon
+          </button></a
         >
       </div>
     </div>
